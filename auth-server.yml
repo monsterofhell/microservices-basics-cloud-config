@@ -21,17 +21,21 @@ logging:
 # and token store
 spring:
   datasource:
-    url: jdbc:mysql://localhost:3306/auth
-    username: root
+    url: jdbc:jdbc:h2:mem:auth
+    username: sa
     password: password
-    driver-class: com.mysql.jdbc.Driver
+    driver-class: org.h2.Driver
 
   jpa:
-    database-platform: org.hibernate.dialect.MySQLDialect
+    database-platform: org.hibernate.dialect.H2Dialect
     show-sql: false
     hibernate:
       ddl-auto: create
-
+# spring.datasource.url=jdbc:h2:mem:testdb
+# spring.datasource.driverClassName=org.h2.Driver
+# spring.datasource.username=sa
+# spring.datasource.password=password
+# spring.jpa.database-platform=org.hibernate.dialect.H2Dialect
 ---
 
 spring:
